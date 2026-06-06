@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Open App (client must be running)",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/client"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Start Dev Servers + Open Browser",
+      "configurations": ["Open App (client must be running)"],
+      "preLaunchTask": "dev:all"
+    }
+  ]
+}
