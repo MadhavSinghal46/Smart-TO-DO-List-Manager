@@ -79,15 +79,15 @@ npm run dev
 
 ### Login Page
 
-![Login](screenshots/login_Page.png)
+![Login](Screenshots/Login_Page.png)
 
 ### Dashboard
 
-![Dashboard](screenshots/Dashboard.png)
+![Dashboard](Screenshots/Dashboard.png)
 
 ### Completed Task
 
-![Completed](screenshots/Completed_Task.png)
+![Completed](Screenshots/Completed_Task.png)
 
 ---
 
