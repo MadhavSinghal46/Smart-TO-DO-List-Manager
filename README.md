@@ -1,148 +1,96 @@
 # Smart To-Do List Manager
 
-A full-stack web application for managing personal tasks. Users sign in with their name and email, then create, edit, delete, and complete tasks — with all data persisted in MongoDB.
+A full-stack task management application built using React, Node.js, Express, and MongoDB.
 
 ## Features
 
-- Login with name and email (JWT-based sessions)
-- Personal dashboard with task management
-- Add, edit, delete, and complete tasks
-- Automatic creation and completion timestamps
-- Separate pending and completed task sections
-- Responsive UI built with Tailwind CSS
-- RESTful API with validation and error handling
+- User login using Name and Email
+- Create new tasks
+- Mark tasks as completed
+- Store task creation and completion timestamps
+- Delete tasks
+- Responsive UI
+- MongoDB Atlas database integration
 
 ## Tech Stack
 
-| Layer | Technologies |
-|-------|-------------|
-| Frontend | React, Tailwind CSS, React Router, Axios, Vite |
-| Backend | Node.js, Express.js (MVC architecture) |
-| Database | MongoDB, Mongoose |
-| Auth | JWT + Local Storage |
+### Frontend
+- React
+- Vite
+- Axios
+- CSS
 
-## Prerequisites
+### Backend
+- Node.js
+- Express.js
 
-- [Node.js](https://nodejs.org/) v18 or higher
-- [MongoDB](https://www.mongodb.com/) running locally or a MongoDB Atlas connection string
+### Database
+- MongoDB Atlas
 
-## Getting Started
+### Deployment
+- Frontend: Vercel
+- Backend: Render
 
-### 1. Clone and install dependencies
+---
+
+## Live Demo
+
+Frontend:
+https://smart-to-do-list-manager-iota.vercel.app
+
+Backend:
+https://smart-to-do-list-manager.onrender.com
+
+---
+
+## Installation
+
+### Clone Repository
 
 ```bash
-cd "To Do List Project"
+git clone https://github.com/MadhavSinghal46/Smart-TO-DO-List-Manager.git
+```
+
+### Install Dependencies
+
+```bash
 npm run install:all
 ```
 
-Or install manually:
+### Environment Variables
 
-```bash
-npm install
-cd server && npm install
-cd ../client && npm install
-```
-
-### 2. Configure environment variables
-
-Copy the server environment example file:
-
-```bash
-cp server/.env.example server/.env
-```
-
-Edit `server/.env` with your values:
+Create `.env` inside `server` folder:
 
 ```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/todo-app
-JWT_SECRET=your-super-secret-jwt-key-change-in-production
-JWT_EXPIRE=7d
+MONGODB_URI=your_mongodb_connection_string
 CLIENT_URL=http://localhost:5173
+PORT=5000
 ```
 
-### 3. Start MongoDB
-
-Make sure MongoDB is running on your machine. If using a local install:
-
-```bash
-mongod
-```
-
-Or use MongoDB Atlas and set `MONGODB_URI` to your Atlas connection string.
-
-### 4. Run the application
-
-From the project root:
+### Run Project
 
 ```bash
 npm run dev
 ```
 
-This starts both the API server and the React client concurrently.
+---
 
-| Service | URL |
-|---------|-----|
-| Frontend | http://localhost:5173 |
-| Backend API | http://localhost:5000/api |
-| Health check | http://localhost:5000/api/health |
+## Screenshots
 
-To run them separately:
+### Login Page
 
-```bash
-npm run dev:server   # API only
-npm run dev:client   # Frontend only
-```
+![Login](screenshots/login_Page.png)
 
-## API Endpoints
+### Dashboard
 
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| POST | `/api/auth/login` | No | Login with `{ name, email }` |
-| GET | `/api/tasks` | Yes | Get pending and completed tasks |
-| POST | `/api/tasks` | Yes | Create a new task |
-| PUT | `/api/tasks/:id` | Yes | Update a pending task |
-| PUT | `/api/tasks/:id/complete` | Yes | Mark task as completed |
-| DELETE | `/api/tasks/:id` | Yes | Delete a task |
+![Dashboard](screenshots/Dashboard.png)
 
-Protected routes require a `Bearer` token in the `Authorization` header.
+### Completed Task
 
-## Project Structure
+![Completed](screenshots/Completed_Task.png)
 
-```text
-├── client/                 # React frontend
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   ├── pages/          # Login, Dashboard
-│   │   ├── services/       # Axios API client
-│   │   └── utils/          # Auth helpers, date formatting
-│   └── package.json
-├── server/                 # Express backend (MVC)
-│   ├── config/             # Database connection
-│   ├── controllers/        # Request handlers
-│   ├── middleware/         # Auth & error handling
-│   ├── models/             # Mongoose schemas
-│   ├── routes/             # API routes
-│   └── package.json
-├── README.md
-├── plan.md
-└── ROADMAP.md
-```
+---
 
-## Usage
+## Author
 
-1. Open http://localhost:5173
-2. Enter your name and email on the login page
-3. Use the dashboard to add tasks with a title and optional description
-4. Edit, complete, or delete pending tasks
-5. View completed tasks with their completion timestamps in the right panel
-
-## Production Build
-
-Build the frontend:
-
-```bash
-cd client && npm run build
-```
-
-The output is in `client/dist/`. Serve it with any static file host and deploy the Express server separately, updating `CLIENT_URL` and `MONGODB_URI` for production.
+Madhav Singhal
